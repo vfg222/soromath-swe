@@ -2,6 +2,7 @@
 let voicemodeenabled = false;
 let voicerate = 1;
 let voicevolume = 1;
+let voiceLang = 'en-US';
 
 
 function voicemodeclick(yarr=true){
@@ -75,6 +76,10 @@ function setvoicesliders(doinit){
   document.getElementById("voicevolumeslider").volume = Math.round((voicevolume)*7);
 }
 
+function setvoiceLanguage(lang){
+  voiceLang = lang;
+}
+
 function removevoicecontainer(event, bypass){
 
   if(!bypass && event.target.id != "voicecontainer") return
@@ -88,6 +93,7 @@ function removevoicecontainer(event, bypass){
 function showvoicecontainer(){
 
   document.getElementById("voicecontainer").style.display = "";
+  document.getElementById("voicelanguage").value = voiceLang;
 
 }
 
@@ -100,12 +106,10 @@ function synthesisvoice(text){
 
 
   for(var i = 0; i < voices.length; i++){
-
-    if(voices[i] == "en-US"){
+    if(voices[i].lang && voices[i].lang.startsWith(voiceLang)){
       utterThis.voice = voices[i];
+      break;
     }
-
-
   }
 
   console.log(voicevolume);

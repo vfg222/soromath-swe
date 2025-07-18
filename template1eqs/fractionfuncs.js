@@ -64,6 +64,10 @@ function fractionspeech(problem){
   let frac1 = problem[0];
   let frac2 = problem[1];
 
+  if(voiceLang.startsWith('sv')){
+    return frac1[0] + " över " + frac1[1] + " plus " + frac2[0] + " över " + frac2[1];
+  }
+
   return frac1[0] + " over " + frac1[1] + " plus " + frac2[0] + " over " + frac2[1];
 
 }

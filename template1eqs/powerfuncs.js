@@ -98,6 +98,10 @@ function addpower(main=false,self=powerpreset,name=null){
 
 function powerspeech(problem){
 
+  if(voiceLang.startsWith('sv')){
+    return (problem[0] < 0 ? "minus " : "") + Math.abs(problem[0]) + " upphöjt till " + (problem[1] < 0 ? "minus " : "") + Math.abs(problem[1]);
+  }
+
   return (problem[0] < 0 ? "negative " : "") + Math.abs(problem[0]) + " to the power of " + (problem[1] < 0 ? "negative " : "") + Math.abs(problem[1]);
 
 }

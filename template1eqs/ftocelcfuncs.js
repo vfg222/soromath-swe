@@ -68,6 +68,10 @@ function addftocelc(main=false,self=ftocelcpreset,name=null){
 
 function ftocelcspeech(problem){
 
+  if(voiceLang.startsWith('sv')){
+    return problem[0] + " grader fahrenheit";
+  }
+
   return problem[0] + " degrees fahrenheit"
 
 

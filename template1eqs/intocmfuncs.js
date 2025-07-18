@@ -68,6 +68,10 @@ function addintocm(main=false,self=intocmpreset,name=null){
 
 function intocmspeech(problem){
 
+  if(voiceLang.startsWith('sv')){
+    return problem[0] + " tum";
+  }
+
   return problem[0] + " inches"
 
 

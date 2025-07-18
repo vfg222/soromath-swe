@@ -341,6 +341,10 @@ function addpercentage(main=false,self=percentagepreset,name=null){
 
 function percentagespeech(problem){
 
+  if(voiceLang.startsWith('sv')){
+    return problem[1] + " procent av " + problem[0];
+  }
+
   return problem[1] + " percent of " + problem[0]
 
 }

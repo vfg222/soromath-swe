@@ -98,6 +98,10 @@ function quadraticspeech(problem){
   let lincoeff = problem[0] * problem[3] + problem[1] * problem[2];
   let constant = problem[2] * problem[3];
 
+  if(voiceLang.startsWith('sv')){
+    return `${coeff == 1 ? '' : coeff} x kvadrat ${lincoeff < 0 ? 'minus' : 'plus'} ${Math.abs(lincoeff) == 1 ? '' : Math.abs(lincoeff)} x ${constant < 0 ? 'minus' : 'plus'} ${Math.abs(constant)} `;
+  }
+
   return `${coeff == 1 ? "" : coeff} x squared ${lincoeff < 0 ? "minus" : "plus"} ${Math.abs(lincoeff) == 1 ? "" : Math.abs(lincoeff)} x ${constant < 0 ? "minus" : "plus"} ${Math.abs(constant)} `
 
 }
