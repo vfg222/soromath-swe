@@ -135,11 +135,16 @@ function linearspeech(problem){
 
   let clone = [...problem]
 
-  clone[0] = clone[0] < 0 ? ("negative " + clone[0]) : clone[0];
-  clone[2] = clone[2] < 0 ? ("negative " + clone[2]) : clone[2];
+  clone[0] = clone[0] < 0 ? (voiceLang.startsWith('sv') ? "minus " + Math.abs(clone[0]) : "negative " + Math.abs(clone[0])) : clone[0];
+  clone[2] = clone[2] < 0 ? (voiceLang.startsWith('sv') ? "minus " + Math.abs(clone[2]) : "negative " + Math.abs(clone[2])) : clone[2];
 
-  clone[1] = clone[1] < 0 ? ("minus " + clone[1]) : ("plus " + clone[1]);
-  clone[3] = clone[3] < 0 ? ("minus " + clone[3]) : ("plus " + clone[3]);
+  clone[1] = clone[1] < 0 ? ("minus " + Math.abs(clone[1])) : (voiceLang.startsWith('sv') ? "plus " + clone[1] : "plus " + clone[1]);
+  clone[3] = clone[3] < 0 ? ("minus " + Math.abs(clone[3])) : (voiceLang.startsWith('sv') ? "plus " + clone[3] : "plus " + clone[3]);
+
+  if(voiceLang.startsWith('sv')){
+    let full = clone[0] + " " + clone[1] + " är lika med " + clone[2] + " " + clone[3];
+    return full;
+  }
 
   let full = clone[0] + " " + clone[1] + " equals " + clone[2] + " " + clone[3];
 

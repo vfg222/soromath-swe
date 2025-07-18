@@ -86,6 +86,10 @@ function addmult(main=false,self=multpreset,name=null){
 
 function multspeech(problem){
 
+  if(voiceLang.startsWith('sv')){
+    return (problem[0] < 0 ? "minus " : "") + Math.abs(problem[0]) + " gånger " + (problem[1] < 0 ? "minus " : "") + Math.abs(problem[1]);
+  }
+
   return (problem[0] < 0 ? "negative " : "") + Math.abs(problem[0]) + " times " + (problem[1] < 0 ? "negative " : "") + Math.abs(problem[1]);
 
 }

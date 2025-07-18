@@ -68,6 +68,10 @@ function addlbtokg(main=false,self=lbtokgpreset,name=null){
 
 function lbtokgspeech(problem){
 
+  if(voiceLang.startsWith('sv')){
+    return problem[0] + " pund";
+  }
+
   return problem[0] + " pounds"
 
 

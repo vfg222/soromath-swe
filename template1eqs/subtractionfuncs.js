@@ -85,6 +85,10 @@ function addsubtraction(main=false,self=subtractionpreset,name=null){
 
 function subtractionspeech(problem){
 
+  if(voiceLang.startsWith('sv')){
+    return (problem[0] < 0 ? "minus " : "") + Math.abs(problem[0]) + " minus " + (problem[1] < 0 ? "minus " : "") + Math.abs(problem[1]);
+  }
+
   return (problem[0] < 0 ? "negative " : "") + Math.abs(problem[0]) + " minus " + (problem[1] < 0 ? "negative " : "") + Math.abs(problem[1]);
 
 

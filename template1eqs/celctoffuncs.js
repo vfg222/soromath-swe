@@ -68,6 +68,10 @@ function addcelctof(main=false,self=celctofpreset,name=null){
 
 function celctofspeech(problem){
 
+  if(voiceLang.startsWith('sv')){
+    return problem[0] + " grader celsius";
+  }
+
   return problem[0] + " degrees celsius"
 
 

@@ -69,9 +69,16 @@ function trigspeech(problem){
 
   let functionstring = "";
 
+  if(voiceLang.startsWith('sv')){
+    if(func == "sin") functionstring = "sinus";
+    if(func == "cos") functionstring = "kosinus";
+    if(func == "tan") functionstring = "tangens";
+    return functionstring + " för " + fraction[0] + " pi över " + fraction[1];
+  }
+
   if(func == "sin") functionstring = "sign";
   if(func == "cos") functionstring = "co-sign";
-  if(func = "tan") functionstring = "tan";
+  if(func == "tan") functionstring = "tan";
 
   return functionstring + " of " + fraction[0] + " pie over " + fraction[1];
 

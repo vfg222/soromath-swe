@@ -503,6 +503,15 @@
 
       <input type="range" min="1" max="7" value="7" class="zuluslider voiceslider" id="voicevolumeslider" oninput="getvoicesliders()">
 
+      <div class = "flashsettingstext">
+        <p class="flashlabel">Language: </p>
+      </div>
+
+      <select class="zuluselect" id="voicelanguage" onchange="setvoiceLanguage(this.value)">
+        <option value="en-US">English</option>
+        <option value="sv-SE">Svenska</option>
+      </select>
+
       <button class="zulubutton" id="voicetest" onclick="synthesisvoice('394 plus 921', voicerate)">Test voice</button>
 
       <button class="zulubutton" id="voicedone" onclick="removevoicecontainer(event, true)">Done</button>

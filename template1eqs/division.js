@@ -89,6 +89,10 @@ function adddivision(main=false,self=divisionpreset,name=null){
 
 function divisionspeech(problem){
 
+  if(voiceLang.startsWith('sv')){
+    return (problem[0] < 0 ? "minus " : "") + Math.abs(problem[0]) + " över " + (problem[1] < 0 ? "minus " : "") + Math.abs(problem[1]);
+  }
+
   return (problem[0] < 0 ? "negative " : "") + Math.abs(problem[0]) + " over " + (problem[1] < 0 ? "negative " : "") + Math.abs(problem[1]);
 
 

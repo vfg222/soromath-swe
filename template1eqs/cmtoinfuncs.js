@@ -68,6 +68,10 @@ function addcmtoin(main=false,self=cmtoinpreset,name=null){
 
 function cmtoinspeech(problem){
 
+  if(voiceLang.startsWith('sv')){
+    return problem[0] + " centimeter";
+  }
+
   return problem[0] + " centimeters"
 
 

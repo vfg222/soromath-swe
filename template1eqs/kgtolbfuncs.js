@@ -68,6 +68,10 @@ function addkgtolb(main=false,self=kgtolbpreset,name=null){
 
 function kgtolbspeech(problem){
 
+  if(voiceLang.startsWith('sv')){
+    return problem[0] + " kilogram";
+  }
+
   return problem[0] + " kilograms"
 
 

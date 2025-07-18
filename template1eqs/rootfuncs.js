@@ -111,6 +111,14 @@ function rootspeech(problem){
   if(problem[0] == 2) rootpart = "square root"
   if(problem[0] == 3) rootpart = "cube root"
 
+  if(voiceLang.startsWith('sv')){
+    if(problem[0] == 1) rootpart = "första roten";
+    if(problem[0] == 2) rootpart = "kvadratrot";
+    if(problem[0] == 3) rootpart = "kubikrot";
+    if(problem[0] > 3) rootpart = problem[0] + ":e roten";
+    return rootpart + " av " + problem[1];
+  }
+
   return rootpart + " of " + problem[1];
 
 }
